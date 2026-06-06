@@ -34,16 +34,7 @@ A simple shopping cart web application built using HTML, CSS, and JavaScript.
 3. Enter fruit name and quantity
 4. Click **Add To Cart**
 
-## 📸 Project Screenshot
 
-(Add a screenshot here later)
 
-## 👩‍💻 Author
 
-**Janhavi Deokate**
 
-Diploma Computer Engineering Student
-
-## 🌐 Live Demo
-
-Coming Soon...
