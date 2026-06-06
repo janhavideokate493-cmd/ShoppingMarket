@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Market</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: lightyellow;
+            padding: 20px;
+        }
+
+        h1{
+            color: darkgreen;
+        }
+
+        .box{
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        input{
+            width: 90%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: darkgreen;
+        }
+
+        #output{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Shopping Market</h1>
+
+        <h3>Fruit Prices</h3>
+
+        <p>Mangoes = ₹50</p>
+        <p>Apples = ₹50</p>
+        <p>Banana = ₹60</p>
+        <p>Cherry = ₹30</p>
+        <p>Strawberry = ₹50</p>
+
+        <input type="text" id="item" placeholder="Enter fruit name">
+
+        <input type="number" id="quantity" placeholder="Enter quantity">
+
+        <button onclick="buyItem()">Add To Cart</button>
+
+        <h3 id="output"></h3>
+
+        <h2 id="finalBill">Final Bill = ₹0</h2>
+
+    </div>
+
+    <script>
+
+        let list1 = {
+            "mangoes": 50,
+            "apples": 50,
+            "banana": 60,
+            "cherry": 30,
+            "strawberry": 50
+        };
+
+        let cart_total = 0;
+
+        function buyItem(){
+
+            let items = document.getElementById("item").value.toLowerCase();
+
+            let quantity = parseInt(document.getElementById("quantity").value);
+
+            if(items in list1){
+
+                let price = list1[items];
+
+                let total = price * quantity;
+
+                cart_total = cart_total + total;
+
+                document.getElementById("output").innerHTML =
+                "Item = " + items +
+                "<br>Price = ₹" + price +
+                "<br>Quantity = " + quantity +
+                "<br>Item Total = ₹" + total;
+
+                document.getElementById("finalBill").innerHTML =
+                "Final Bill = ₹" + cart_total;
+
+            }
+
+            else{
+
+                document.getElementById("output").innerHTML =
+                "Item Out Of Stock";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

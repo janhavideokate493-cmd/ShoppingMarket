@@ -20,8 +20,7 @@ elif player == "paper" and computer == "rock":
 elif player == computer:
     print("Tie")
 
-elif player in choices:
-    print("Computer won")
+
 
 else:
     print("Invalid input")
